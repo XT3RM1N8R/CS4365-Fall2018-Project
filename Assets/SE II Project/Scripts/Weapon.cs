@@ -23,18 +23,32 @@ public class Weapon : MonoBehaviour {
     public int damage = 0;
     public int range = 0;
     public string weaponName = "Default";
+
+    public void Reset() {
+      attack = 0;
+      damage = 0;
+      range = 0;
+      weaponName = null;
+    }
   }
-  public WeaponStats weaponStats;
+  public WeaponStats weaponStats = new WeaponStats();
+
+  public static void CreateWeapon(WeaponTypes weaponType, WeaponTiers weaponTier, Transform parent = null) {
+    GameObject weaponObject = new GameObject("Weapon", typeof(Weapon));
+    weaponObject.GetComponent<Weapon>().SetWeaponStats(weaponType, weaponTier);
+    weaponObject.transform.parent = parent;
+  }
 
   private void OnValidate() {
     CheckWeaponStats();
   }
 
+  private void Start() {
+    OnValidate();
+  }
+
   private void CheckWeaponStats() {
-    weaponStats.attack = 0;
-    weaponStats.damage = 0;
-    weaponStats.range = 0;
-    weaponStats.weaponName = null;
+    weaponStats.Reset();
 
     switch (weaponTier) {
       case WeaponTiers.STEEL:
@@ -67,5 +81,10 @@ public class Weapon : MonoBehaviour {
         break;
     }
     Debug.Log(weaponStats.weaponName);
+  }
+
+  public void SetWeaponStats(WeaponTypes weaponType, WeaponTiers weaponTier) {
+    this.weaponType = weaponType;
+    this.weaponTier = weaponTier;
   }
 }
