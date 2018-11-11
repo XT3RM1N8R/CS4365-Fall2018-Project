@@ -117,9 +117,9 @@ public class Unit : MonoBehaviour {
     }
   }
 
-  public void SetUnitStats(JobTypes jobType, FactionTypes factionType) {
-    this.jobType = jobType;
+  public void SetUnitStats(FactionTypes factionType, JobTypes jobType) {
     this.factionType = factionType;
+    this.jobType = jobType;
     // possibly call to CheckUnitStats()?
   }
   /*
