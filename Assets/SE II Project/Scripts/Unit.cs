@@ -36,11 +36,17 @@ public class Unit : MonoBehaviour {
       unitName = null;
     }
   }
-  public UnitStats unitStats;
+  public UnitStats unitStats = new UnitStats();
 
   public Weapon weapon;
   public Armor armor;
   public Potion potion;
+
+  public static void CreateUnit(FactionTypes factionType, JobTypes jobType, Transform parent = null) {
+    GameObject unitObject = new GameObject("Unit", typeof(Unit));
+    unitObject.GetComponent<Unit>().SetUnitStats(factionType, jobType);
+    unitObject.transform.parent = parent;
+  }
 
   private void OnValidate() { // Editor-only; Called on Inspector change and script start
     CheckUnitStats(); // Update unit stats with latest values
