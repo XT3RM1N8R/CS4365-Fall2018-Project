@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-  public enum weaponTypes {
+  public enum WeaponTypes {
     AXE,
     BOW,
     STAFF
   }
-  public weaponTypes weaponType;
+  public WeaponTypes weaponType;
 
-  public enum weaponTiers {
+  public enum WeaponTiers {
     STEEL,
     ADAMANTINE,
     MASTERWORK
   }
-  public weaponTiers weaponTier;
+  public WeaponTiers weaponTier;
 
   [System.Serializable]
   public class WeaponStats {
@@ -37,13 +37,13 @@ public class Weapon : MonoBehaviour {
     weaponStats.weaponName = null;
 
     switch (weaponTier) {
-      case weaponTiers.STEEL:
+      case WeaponTiers.STEEL:
         Debug.Log("Steel");
         break;
-      case weaponTiers.ADAMANTINE:
+      case WeaponTiers.ADAMANTINE:
         Debug.Log("Adamantine");
         break;
-      case weaponTiers.MASTERWORK:
+      case WeaponTiers.MASTERWORK:
         Debug.Log("Masterwork");
         weaponStats.weaponName = "Tier ";
         break;
@@ -52,13 +52,13 @@ public class Weapon : MonoBehaviour {
         break;
     }
     switch (weaponType) {
-      case weaponTypes.AXE:
+      case WeaponTypes.AXE:
         Debug.Log("Axe");
         break;
-      case weaponTypes.BOW:
+      case WeaponTypes.BOW:
         Debug.Log("Bow");
         break;
-      case weaponTypes.STAFF:
+      case WeaponTypes.STAFF:
         Debug.Log("Staff");
         weaponStats.weaponName += "Type.";
         break;
