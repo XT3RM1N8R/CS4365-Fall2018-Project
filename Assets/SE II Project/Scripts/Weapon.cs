@@ -17,18 +17,41 @@ public class Weapon : MonoBehaviour {
   }
   public WeaponTiers weaponTier;
 
-  [System.Serializable]
+  [System.Serializable] // Allows Unity to properly serialize and save this object
   public class WeaponStats {
+    [System.Serializable]
+    public class DamageDie {
+      public int count = 0;
+      public int sides = 0;
+
+      public DamageDie(int count, int sides) {
+        this.count = count;
+        this.sides = sides;
+      }
+
+      public void Set(int count, int sides) {
+        this.count = count;
+        this.sides = sides;
+      }
+
+      public void Reset() {
+        count = 0;
+        sides = 0;
+      }
+    }
+    public DamageDie damageDie = new DamageDie(0, 0);
+
     public int attack = 0;
     public int damage = 0;
     public int range = 0;
-    public string weaponName = "Default";
+    public string weaponName = "";
 
     public void Reset() {
+      damageDie.Reset();
       attack = 0;
       damage = 0;
       range = 0;
-      weaponName = null;
+      weaponName = "";
     }
   }
   public WeaponStats weaponStats = new WeaponStats();
@@ -52,14 +75,16 @@ public class Weapon : MonoBehaviour {
 
     switch (weaponTier) {
       case WeaponTiers.STEEL:
-        Debug.Log("Steel");
+        weaponStats.attack += 1;
+        weaponStats.weaponName += "Steel ";
         break;
       case WeaponTiers.ADAMANTINE:
-        Debug.Log("Adamantine");
+        weaponStats.attack += 3;
+        weaponStats.weaponName += "Adamantine ";
         break;
       case WeaponTiers.MASTERWORK:
-        Debug.Log("Masterwork");
-        weaponStats.weaponName = "Tier ";
+        weaponStats.attack += 5;
+        weaponStats.weaponName += "Masterwork ";
         break;
       default:
         Debug.Log("Tier Default");
@@ -67,20 +92,22 @@ public class Weapon : MonoBehaviour {
     }
     switch (weaponType) {
       case WeaponTypes.AXE:
-        Debug.Log("Axe");
+        weaponStats.damageDie.Set(1, 8);
+        weaponStats.weaponName += "Axe";
         break;
       case WeaponTypes.BOW:
-        Debug.Log("Bow");
+        weaponStats.damageDie.Set(1, 6);
+        weaponStats.weaponName += "Bow";
         break;
       case WeaponTypes.STAFF:
-        Debug.Log("Staff");
-        weaponStats.weaponName += "Type.";
+        weaponStats.damageDie.Set(1, 6);
+        weaponStats.weaponName += "Staff";
         break;
       default:
         Debug.Log("Type Default");
         break;
     }
-    Debug.Log(weaponStats.weaponName);
+    gameObject.name = weaponStats.weaponName;
   }
 
   public void SetWeaponStats(WeaponTypes weaponType, WeaponTiers weaponTier) {
