@@ -113,5 +113,6 @@ public class Weapon : MonoBehaviour {
   public void SetWeaponStats(WeaponTypes weaponType, WeaponTiers weaponTier) {
     this.weaponType = weaponType;
     this.weaponTier = weaponTier;
+    CheckWeaponStats();
   }
 }

@@ -120,7 +120,7 @@ public class Unit : MonoBehaviour {
   public void SetUnitStats(FactionTypes factionType, JobTypes jobType) {
     this.factionType = factionType;
     this.jobType = jobType;
-    // possibly call to CheckUnitStats()?
+    CheckUnitStats();
   }
   /*
   void OnMouseOver(???) {
