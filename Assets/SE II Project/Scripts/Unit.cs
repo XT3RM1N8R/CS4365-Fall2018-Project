@@ -102,18 +102,19 @@ public class Unit : MonoBehaviour {
     }
 
     if (weapon) {
-      unitStats.attack += (int) weapon.weaponType;
-      Debug.Log("Weapon: " + weapon.weaponType.ToString());
-    }
-
-    if (potion) {
-      unitStats.hp += 1;
-      Debug.Log("Potion");
+      unitStats.attack += weapon.weaponStats.attack;
+      Debug.Log(gameObject.name + " has Weapon: " + weapon.weaponStats.weaponName);
     }
 
     if (armor) {
-      unitStats.evade += 1;
-      Debug.Log("Armor");
+      unitStats.evade += armor.armorStats.evade;
+      unitStats.hp += armor.armorStats.hp;
+      Debug.Log(gameObject.name + " has Armor: " + armor.armorStats.armorName);
+    }
+
+    if (potion) {
+      unitStats.hp += potion.potionStats.hp;
+      Debug.Log(gameObject.name + " has Potion: " + potion.potionStats.potionName);
     }
   }
 
