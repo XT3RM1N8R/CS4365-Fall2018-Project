@@ -11309,9 +11309,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 297772092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa9353e87db58f409d64631f0f73d97, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a9f6e304d7758a44b007757b83606ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  factionType: 0
+  jobType: 0
+  unitStats:
+    attack: 5
+    damage: 0
+    evade: 16
+    hp: 17
+    movementPoints: 10
+    unitName: Axis Ranger
+  weapon: {fileID: 1544448552}
+  armor: {fileID: 0}
+  potion: {fileID: 0}
 --- !u!4 &297772094
 Transform:
   m_ObjectHideFlags: 0
@@ -31875,7 +31887,7 @@ GameObject:
   - component: {fileID: 935353591}
   - component: {fileID: 935353590}
   m_Layer: 0
-  m_Name: Fake Armor
+  m_Name: One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31892,6 +31904,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003b87567fb1f7644b74f8cf0317001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armorType: 0
+  armorStats:
+    evade: 1
+    hp: 1
+    armorName: One
 --- !u!4 &935353591
 Transform:
   m_ObjectHideFlags: 0
@@ -53321,7 +53338,7 @@ GameObject:
   - component: {fileID: 1544448553}
   - component: {fileID: 1544448552}
   m_Layer: 0
-  m_Name: Weapon Script Tester
+  m_Name: Steel Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53338,13 +53355,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98a615fe0342444aa8feb06adda253c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 2
-  weaponTier: 2
+  weaponType: 0
+  weaponTier: 0
   weaponStats:
-    attack: 0
+    damageDie:
+      count: 1
+      sides: 8
+    attack: 1
     damage: 0
     range: 0
-    weaponName: Tier Type.
+    weaponName: Steel Axe
 --- !u!4 &1544448553
 Transform:
   m_ObjectHideFlags: 0
