@@ -11317,8 +11317,8 @@ MonoBehaviour:
   unitStats:
     attack: 6
     damage: 0
-    evade: 17
-    hp: 18
+    evade: 19
+    hp: 22
     movementPoints: 10
     unitName: Axis Ranger
   weapon: {fileID: 1544448552}
@@ -53341,7 +53341,7 @@ GameObject:
   - component: {fileID: 1544448553}
   - component: {fileID: 1544448552}
   m_Layer: 0
-  m_Name: Steel Bow
+  m_Name: Adamantine Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53358,16 +53358,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98a615fe0342444aa8feb06adda253c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 1
-  weaponTier: 0
+  weaponType: 0
+  weaponTier: 1
   weaponStats:
     damageDie:
       count: 1
-      sides: 6
-    attack: 1
+      sides: 8
+    attack: 3
     damage: 0
     range: 0
-    weaponName: Steel Bow
+    weaponName: Adamantine Axe
 --- !u!4 &1544448553
 Transform:
   m_ObjectHideFlags: 0
