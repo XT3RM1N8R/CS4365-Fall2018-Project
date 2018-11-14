@@ -11315,14 +11315,14 @@ MonoBehaviour:
   factionType: 0
   jobType: 0
   unitStats:
-    attack: 5
+    attack: 6
     damage: 0
-    evade: 16
+    evade: 17
     hp: 17
     movementPoints: 10
     unitName: Axis Ranger
   weapon: {fileID: 1544448552}
-  armor: {fileID: 0}
+  armor: {fileID: 935353590}
   potion: {fileID: 0}
 --- !u!4 &297772094
 Transform:
@@ -11333,7 +11333,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.2645838, y: 0.95740825, z: -3.3049154}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1544448553}
+  - {fileID: 935353591}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23655,7 +23657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &677167993
 GameObject:
@@ -31887,7 +31889,7 @@ GameObject:
   - component: {fileID: 935353591}
   - component: {fileID: 935353590}
   m_Layer: 0
-  m_Name: One
+  m_Name: Two Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31904,23 +31906,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003b87567fb1f7644b74f8cf0317001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armorType: 0
+  armorType: 1
   armorStats:
-    evade: 1
-    hp: 1
-    armorName: One
+    evade: 2
+    hp: 2
+    armorName: Two Armor
 --- !u!4 &935353591
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 935353589}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2645838, y: 0.95740825, z: -3.3049154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 297772094}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &937067290
 MonoBehaviour:
@@ -53338,7 +53340,7 @@ GameObject:
   - component: {fileID: 1544448553}
   - component: {fileID: 1544448552}
   m_Layer: 0
-  m_Name: Steel Axe
+  m_Name: Steel Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53355,28 +53357,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98a615fe0342444aa8feb06adda253c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   weaponTier: 0
   weaponStats:
     damageDie:
       count: 1
-      sides: 8
+      sides: 6
     attack: 1
     damage: 0
     range: 0
-    weaponName: Steel Axe
+    weaponName: Steel Bow
 --- !u!4 &1544448553
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1544448551}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.0500374, y: -9.249056, z: 4.187152}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.314621, y: -10.206464, z: 7.4920673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 297772094}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544846260
 GameObject:
@@ -60353,7 +60355,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1754616229
 GameObject:
